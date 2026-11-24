@@ -16,7 +16,7 @@
     "group": { "default": "Advanced" },
     "title": { "default": "newsletter" },
     "description": { "default": "newsletter description" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "Announcement",
     "properties": {
       "description": "newsletter"
     }
