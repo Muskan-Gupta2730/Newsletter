@@ -4,7 +4,6 @@
   "alias": "NewsletterWebPart",
   "componentType": "WebPart",
 
-
   "version": "*",
   "manifestVersion": 2,
   "requiresCustomScript": false,
@@ -12,13 +11,19 @@
   "supportsThemeVariants": true,
 
   "preconfiguredEntries": [{
-    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", 
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
     "group": { "default": "Advanced" },
-    "title": { "default": "newsletter" },
-    "description": { "default": "newsletter description" },
-    "officeFabricIconFontName": "Announcement",
+    "title": { "default": "CustomNewsletter" },
+    "description": { "default": "Shows the latest spotlight news posts from your site as cards, with each post's category, published date and a link to the full story." },
+    "officeFabricIconFontName": "News",
     "properties": {
-      "description": "newsletter"
+      "siteUrl": "",
+      "spotlightColumn": "IsSpotlight",
+      "categoryColumn": "NewsCategory",
+      "itemCount": 3,
+      "title": "Spotlight",
+      "subtitle": "News from around Sirva",
+      "rightLabel": "This week"
     }
   }]
 }
