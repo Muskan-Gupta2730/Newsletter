@@ -1,0 +1,255 @@
+// ─── Design tokens ───────────────────────────────────────────
+$navy:   #14004d;
+$purple: #6b2fa8;
+$grey:   #666;
+
+// ─── Outer section ───────────────────────────────────────────
+.spotlight {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 32px 36px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', sans-serif;
+
+  // Gradient background matching the screenshot
+  background: linear-gradient(110deg,
+    #ece6fb 0%,
+    #dddcfa 25%,
+    #d4dcfb 55%,
+    #d9e9fc 100%
+  );
+}
+
+// ─── Decorative blobs ────────────────────────────────────────
+.blobOne,
+.blobTwo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 0;
+}
+.blobOne {
+  width: 400px; height: 300px;
+  right: 5%;    top: 15%;
+  background: rgba(155, 150, 255, 0.4);
+}
+.blobTwo {
+  width: 320px; height: 260px;
+  left: 20%;    bottom: -80px;
+  background: rgba(180, 210, 255, 0.5);
+}
+
+// ─── Header row ──────────────────────────────────────────────
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.headingGroup {
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 800;
+  color: $navy;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  font-size: 11px;
+  letter-spacing: 3.5px;
+  color: $purple;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+// Gradient separator line
+.line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, #5fe0ea 0%, #9494f5 50%, #b04be4 100%);
+  margin-bottom: 28px;
+}
+
+.rightLabel {
+  flex-shrink: 0;
+  font-size: 11px;
+  letter-spacing: 3.5px;
+  color: $purple;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+// ─── Cards grid ──────────────────────────────────────────────
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+// ─── Individual card ─────────────────────────────────────────
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  padding: 24px 24px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 6px;
+  text-decoration: none !important;
+  color: inherit;
+  box-shadow: 0 2px 10px rgba(20, 0, 77, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(4px);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(20, 0, 77, 0.17);
+    text-decoration: none !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $purple;
+    outline-offset: 3px;
+  }
+}
+
+// Category + date row
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.category {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: $purple;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.date {
+  font-size: 12px;
+  color: $grey;
+  font-weight: 400;
+}
+
+// Card headline
+.cardTitle {
+  margin: 14px 0 0;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: $navy;
+  // Clamp to 3 lines
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Footer row: "Read the story" + arrow
+.footer {
+  margin-top: auto;
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.readMore {
+  font-size: 14px;
+  color: $navy;
+  font-weight: 400;
+}
+
+.arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: $navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+
+  .card:hover & {
+    background: $purple;
+  }
+}
+
+// ─── Loading skeleton ─────────────────────────────────────────
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+%skeleton-base {
+  border-radius: 4px;
+  background: linear-gradient(90deg, #e0d8f7 25%, #f0ecfd 50%, #e0d8f7 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+.skeletonMeta {
+  @extend %skeleton-base;
+  height: 12px;
+  width: 55%;
+  margin-bottom: 4px;
+}
+
+.skeletonTitle {
+  @extend %skeleton-base;
+  height: 20px;
+  width: 90%;
+  margin-top: 14px;
+}
+
+.skeletonText {
+  @extend %skeleton-base;
+  height: 14px;
+  width: 40%;
+}
+
+// ─── Error / empty message ───────────────────────────────────
+.message {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  color: $navy;
+  padding: 16px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .title { font-size: 38px; }
+}
+
+@media (max-width: 640px) {
+  .spotlight { padding: 20px 16px 28px; }
+  .grid      { grid-template-columns: 1fr; gap: 16px; }
+  .header    { flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+  .title     { font-size: 32px; }
+  .subtitle,
+  .rightLabel { font-size: 10px; letter-spacing: 2.5px; }
+  .line      { width: 100%; margin-bottom: 0; }
+  .rightLabel { margin-bottom: 0; }
+}

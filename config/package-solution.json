@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "newsletter-client-side-solution",
+    "id": "a3bdc734-a4b1-4c1c-84b0-696f7c8e7305",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "newsletter description"
+      },
+      "longDescription": {
+        "default": "newsletter description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "newsletter Feature",
+        "description": "The feature that activates elements of the newsletter solution.",
+        "id": "b9673a81-80f7-40a8-9315-0eaace41aa67",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/newsletter.sppkg"
+  }
+}
